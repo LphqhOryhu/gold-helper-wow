@@ -5,19 +5,15 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 type Item = { id: number; name: string };
 
 function formatGold(value?: number | null) {
-  if (value == null || isNaN(value)) return <span className="text-zinc-500">–</span>;
-  const gold = Math.floor(value);
-  const silver = Math.floor((value - gold) * 100);
-  const copper = Math.round(((value - gold) * 100 - silver) * 100);
-  return (
-    <span className="flex items-center gap-1 tabular-nums">
-      {gold > 0 && <span className="text-yellow-500 font-bold">{gold} <span className="text-xs">g</span></span>}
-      {silver > 0 && <span className="text-gray-300">{silver} <span className="text-xs">s</span></span>}
-      {copper > 0 && <span className="text-orange-400">{copper} <span className="text-xs">c</span></span>}
-      {(gold === 0 && silver === 0 && copper === 0) && <span className="text-zinc-500">0</span>}
+    if (value == null || isNaN(value)) return <span className="text-zinc-500">–</span>;
+    const gold = Math.floor(value / 10000);
+    return (
+        <span className="flex items-center gap-1 tabular-nums">
+      <span className="text-yellow-500 font-bold">{gold} <span className="text-xs">g</span></span>
     </span>
-  );
+    );
 }
+
 
 export default function AhSearchPage() {
     const [q, setQ] = useState('lin');

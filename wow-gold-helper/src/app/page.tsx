@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { MagnifyingGlassIcon, UserCircleIcon, WalletIcon } from '@heroicons/react/24/solid';
+import { ArrowPathIcon } from '@heroicons/react/24/solid';
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full bg-zinc-950 py-12">
       <div className="w-[2200px] mx-auto bg-zinc-900 rounded-2xl shadow-2xl px-24 py-24 border border-zinc-800">
         <h1 className="text-6xl font-extrabold mb-16 text-center text-gradient bg-gradient-to-r from-blue-400 via-yellow-400 to-green-400 bg-clip-text text-transparent drop-shadow-lg">Bienvenue sur Gold Helper WoW</h1>
-        <div className="grid grid-cols-3 gap-24 w-full">
+        <div className="grid grid-cols-4 gap-24 w-full">
           <Link href="/ah-search" className="group bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 border border-blue-600 rounded-2xl shadow-2xl p-16 flex flex-col items-center gap-8 hover:scale-105 hover:shadow-blue-500/40 transition-all duration-300">
             <MagnifyingGlassIcon className="w-20 h-20 text-blue-400 group-hover:scale-125 transition-transform duration-300" />
             <span className="text-3xl font-bold">Recherche AH</span>
@@ -23,6 +24,11 @@ export default function Home() {
             <WalletIcon className="w-20 h-20 text-green-400 group-hover:scale-125 transition-transform duration-300" />
             <span className="text-3xl font-bold">Inventaire</span>
             <span className="text-green-200 text-center text-2xl">Estime la valeur de ton inventaire en or.</span>
+          </Link>
+          <Link href="/cross-flip" className="group bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 border border-purple-500 rounded-2xl shadow-2xl p-16 flex flex-col items-center gap-8 hover:scale-105 hover:shadow-purple-400/40 transition-all duration-300">
+            <ArrowPathIcon className="w-20 h-20 text-purple-400 group-hover:scale-125 transition-transform duration-300" />
+            <span className="text-3xl font-bold">Cross-Flip</span>
+            <span className="text-purple-200 text-center text-2xl">Compare les marges entre royaumes pour flipper des objets.</span>
           </Link>
         </div>
       </div>
